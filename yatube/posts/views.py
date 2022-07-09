@@ -1,14 +1,13 @@
-import os.path
+from django.shortcuts import get_object_or_404, render
 
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from .models import Group, Post
 
-from .models import Post, Group
+MAX_SAMPLE_SIZE = 10
 
 
-# Create your views here.
 def index(request):
-    posts = Post.objects.order_by('-pub_date')[:10]
+    """Renders the main page of the site."""
+    posts = Post.objects.select_related('author', 'group')[:MAX_SAMPLE_SIZE]
     title = 'Это главная страница проекта Yatube'
     context = {
         'title': title,
@@ -18,9 +17,10 @@ def index(request):
 
 
 def group_posts(request, slug):
+    """Renders posts from a specific community."""
     template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    posts = group.posts.select_related('author', 'group')[:MAX_SAMPLE_SIZE]
     context = {
         'group': group,
         'posts': posts,
