@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% block title %}
-  {{ group.title }}
+  {{ title }}
 {% endblock %}
 {% block content %}
-  <h1>{{ group.title }}</h1>
-  <p>
-    {{ group.description }}
-  </p>
+  <h1>Последние обновления на сайте</h1>
+  {% include 'posts/includes/switcher.html' %}
   {% for post in page_obj %}
     <article>
       <ul>
@@ -34,5 +32,4 @@
   {% endfor %}
 
   {% include 'posts/includes/paginator.html' %}
-
 {% endblock %}

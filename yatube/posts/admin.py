@@ -5,6 +5,7 @@ from .models import Group, Post
 
 class PostAdmin(admin.ModelAdmin):
     """Model for displaying information about posts in the admin panel."""
+
     list_display = (
         'pk',
         'text',
