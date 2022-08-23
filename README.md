@@ -4,7 +4,8 @@
 - Пуликовать личные дневники на своей странице
 - Отслеживать страницы ваших друзей и читать их записи
 - Комментировать записи понравившихся авторов
-Посмотреть проект можно тут http://rodionpetproject.pythonanywhere.com/profile/rodion/
+# Посмотреть проект можно тут 
+- http://rodionpetproject.pythonanywhere.com/profile/rodion/
 ### Технологии
 Python 3.7
 Django 2.2.19
