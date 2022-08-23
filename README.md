@@ -5,7 +5,7 @@
 - Отслеживать страницы ваших друзей и читать их записи
 - Комментировать записи понравившихся авторов
 ### Посмотреть проект можно тут 
-- http://rodionpetproject.pythonanywhere.com/profile/rodion/
+- http://rodionpetproject.pythonanywhere.com
 ### Технологии
 Python 3.7
 Django 2.2.19
